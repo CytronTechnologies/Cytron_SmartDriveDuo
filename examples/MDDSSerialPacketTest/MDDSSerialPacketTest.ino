@@ -48,6 +48,9 @@ void setup()
   digitalWrite(13, HIGH);
   delay(2000); // Delay for 5 seconds.
   digitalWrite(13, LOW);
+  
+  smartDriveDuo30.initialByte(0x80); // MDDS30
+  //smartDriveDuo30.initialByte(0x55); // MDDS10 or MDDS60
 }
 
 void loop()
