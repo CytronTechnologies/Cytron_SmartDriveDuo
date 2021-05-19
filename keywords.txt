@@ -10,6 +10,7 @@ Cytron_SmartDriveDuo	KEYWORD3
 # Methods and Functions 
 #######################################	
 
+initialByte KEYWORD2
 control	KEYWORD2
 
 #######################################
