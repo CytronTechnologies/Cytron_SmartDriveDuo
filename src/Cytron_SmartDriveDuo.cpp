@@ -61,16 +61,26 @@ Cytron_SmartDriveDuo::Cytron_SmartDriveDuo(int mode, int txPin, int boardId, uin
     hardwareSerial = true;
     Serial.begin(baudrate);
     while (!Serial);
-    delay(1000);
-    Serial.write(0x80);
+    //delay(1000);
+    //Serial.write(0x80);
   }
   else {
     hardwareSerial = false;
     pinMode(_txPin, OUTPUT);
     MDDSSerial = new SoftwareSerial(_rxPin, _txPin);
     MDDSSerial->begin(baudrate);
-    delay(1000);
-    MDDSSerial->write(0x80);
+    //delay(1000);
+    //MDDSSerial->write(0x80);
+  }
+}
+
+void Cytron_SmartDriveDuo::initialByte(uint8_t dummyByte)
+{
+  if (hardwareSerial == true) {
+    Serial.write(dummyByte);
+  }
+  else {
+    MDDSSerial->write(dummyByte);
   }
 }
 
