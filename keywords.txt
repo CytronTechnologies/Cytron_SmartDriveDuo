@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map For Shield2AMotor
+####################################### 
+# Class
+#######################################
+
+Cytron_SmartDriveDuo	KEYWORD3
+
+#######################################
+# Methods and Functions 
+#######################################	
+
+initialByte	KEYWORD2
+control	KEYWORD2
+
+#######################################
+# Constants
+#######################################
+
+RC_MCU	LITERAL1
+PWM_INDEPENDENT	LITERAL1
+PWM_MIXED	LITERAL1
+SERIAL_SIMPLFIED	LITERAL1
+SERIAL_PACKETIZED	LITERAL1
