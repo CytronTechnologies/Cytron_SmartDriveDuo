@@ -147,7 +147,7 @@ void Cytron_SmartDriveDuo::control(signed int motorLSpeed, signed int motorRSpee
       }
       break;
 
-    case SERIAL_SIMPLFIED:
+    case SERIAL_SIMPLIFIED:
       if (motorLSpeed >= 0) {
         commandByte = 0;
         _motorLSpeed = map(motorLSpeed, 0, 100, 0, 63);
@@ -182,8 +182,25 @@ void Cytron_SmartDriveDuo::control(signed int motorLSpeed, signed int motorRSpee
       break;
 
     case SERIAL_PACKETIZED:
+      // Left motor
       addressByte = _boardId;
       commandByte = map(motorLSpeed, -100, 100, 0, 255);
+      checksum = headerByte + addressByte + commandByte;
+      if (hardwareSerial == true) {
+        Serial.write(headerByte);
+        Serial.write(addressByte);
+        Serial.write(commandByte);
+        Serial.write(checksum);
+      }
+      else {
+        MDDSSerial->write(headerByte);
+        MDDSSerial->write(addressByte);
+        MDDSSerial->write(commandByte);
+        MDDSSerial->write(checksum);
+      }
+      // Right motor
+      addressByte = _boardId | 0b00001000;
+      commandByte = map(motorRSpeed, -100, 100, 0, 255);
       checksum = headerByte + addressByte + commandByte;
       if (hardwareSerial == true) {
         Serial.write(headerByte);
