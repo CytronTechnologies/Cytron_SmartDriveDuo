@@ -34,7 +34,7 @@
 #include <Cytron_SmartDriveDuo.h>
 #define IN1 4 // Arduino pin 4 is connected to MDDS60 pin IN1.
 #define BAUDRATE  9600
-Cytron_SmartDriveDuo smartDriveDuo30(SERIAL_SIMPLFIED, IN1, BAUDRATE);
+Cytron_SmartDriveDuo smartDriveDuo30(SERIAL_SIMPLIFIED, IN1, BAUDRATE);
 
 char inChar;
 signed int speedLeft, speedRight;
