@@ -31,7 +31,6 @@ Cytron_SmartDriveDuo::Cytron_SmartDriveDuo(int mode, int in1Pin, int in2Pin, int
   pinMode(_in2Pin, OUTPUT);
 }
 
-SoftwareSerial* MDDSSerial;
 boolean hardwareSerial;
 Cytron_SmartDriveDuo::Cytron_SmartDriveDuo(int mode, int txPin, uint32_t baudrate)
 {

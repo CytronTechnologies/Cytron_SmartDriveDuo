@@ -30,6 +30,7 @@ class Cytron_SmartDriveDuo
     void control(signed int motorLeftSpeed, signed int motorRightSpeed);
     
   private:
+    SoftwareSerial* MDDSSerial;
   	uint8_t _mode;
   	uint8_t _rc1Pin, _rc2Pin;
   	uint8_t _an1Pin, _an2Pin, _in1Pin, _in2Pin;
